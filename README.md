@@ -1,6 +1,7 @@
 # Projects
 Side/Practice Projects
 
+
 ---- Shop Manager ----
 
   The application allow admin to filter/add/edit/delete products of the shop with a 
