@@ -23,21 +23,30 @@
  <!-- filter bar start -->
 
 		 <div class="filters" layout="row" layout-align=" center center" ng-show="showFilter">
+		 	
 		 	<md-input-container>
 		 		<div layout="row">
 		 		<label>  Enter search </label>
 		 		<input type="text" ng-model="searchProduct">
-		 		
-		 		
-		  	</div>
-
-		 		
+		 			
+		  	</div>	
 		  	</md-input-container>
 
-		  	<div layout="row">
-		 		<md-button class="md-warn button2" ng-click="searchProduct=''">Clear</md-button>
-		  	</div>
+		  	<md-input-container>
+		        <label> Order by</label>
+		        <md-select ng-model="sortOrder" >
+		          <md-option value="title" > Name
+		          </md-option>
+		          <md-option value="price" > Price Low to Highest
+		          </md-option>
+		          <md-option value="-price" > Price Highest to Low
+		          </md-option>
+		        </md-select>
+     		 </md-input-container>
 
+			<div layout="row">
+		 		<md-button class="md-warn button2" ng-click="clearFilter()">Clear</md-button>
+		  	</div>
 
 		 </div>
 
@@ -49,7 +58,7 @@
 
  <md-content class="md-padding " layout="row" layout-wrap layout-align="center center ">
  
- 	<md-card class="animates"flex="30" ng-repeat="product in products | filter: searchProduct">
+ 	<md-card class="animates"flex="30" ng-repeat="product in products | filter: searchProduct | orderBy:sortOrder" >
  			<img  ng-src="{{product.picture}}">
 
  		<md-content >

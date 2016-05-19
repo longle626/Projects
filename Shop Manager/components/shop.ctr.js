@@ -19,10 +19,12 @@
 			return parseInt($scope.products.price)
 		}
 
- 
 		$scope.products=productsFactory.ref;
 		
 		//filter component 
+
+		$scope.sortOrder = "";
+
 		$scope.filterMessage = "filter products"
 		
 		$scope.filter = function (){
@@ -37,6 +39,11 @@
 			$scope.filterMessage="Filter Products "
 			};
 
+		}
+
+		$scope.clearFilter = function(){
+			$scope.searchProduct = "";
+			$scope.sortOrder="";
 		}
 
 		// side nav functionality
@@ -122,7 +129,7 @@
 		// var data = [{
   //   "index": 0,
   //   "title": "Angular Book",
-  //   "price": "2,014.75",
+  //   "price": "2,014",
   //   "picture": "https://s3.amazonaws.com/titlepages.leanpub.com/angular2-book/hero?1461219702",
   //   "contact": {
   //       "name":"John Doe",
@@ -134,7 +141,7 @@
   // {
   //   "index": 1,
   //   "title": "HP Laptop Core i5",
-  //   "price": "1,722.93",
+  //   "price": "1,722",
   //   "picture": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQVD_5ASI6LkNVNxasS3gbXJVkeR0gWnvusGyyfp3hO7Qk-O29N",
   //   "contact": {
   //       "name":"John Doe",
@@ -146,7 +153,7 @@
   // {
   //   "index": 2,
   //   "title": "MacBook Pro Core i7",
-  //   "price": "1,899.32",
+  //   "price": "1,899",
   //   "picture": "http://zdnet4.cbsistatic.com/hub/i/r/2015/04/20/b753bbb8-ecbd-4276-8ed3-f5060752a6f0/resize/770xauto/f607458aacfa18ef3467cc8336a8167a/macbook-pro-new.jpg",
   //    "contact": {
   //       "name":"John Doe",
@@ -158,7 +165,7 @@
   // {
   //   "index": 3,
   //   "title": " Macbook Pro Charger",
-  //   "price": "2,681.20",
+  //   "price": "2,681",
   //   "picture": "http://www.ccpowerpc.com.au/zencart/images/APPLE165V365A60W.jpg",
   //   "contact": {
   //       "name":"John Doe",
@@ -170,7 +177,7 @@
   // {
   //   "index": 4,
   //   "title": "Samsung Galaxy S7",
-  //   "price": "3,040.02",
+  //   "price": "3,040",
   //   "picture": "http://cdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s7-usa1.jpg",
   //   "contact": {
   //       "name":"John Doe",
@@ -182,7 +189,7 @@
   // {
   //   "index": 5,
   //   "title": "Iphone 6s Plus",
-  //   "price": "3,623.23",
+  //   "price": "3,623",
   //   "picture": "http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6p/gray/iphone6p-gray-select-2014_GEO_US?wid=1200&hei=630&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=khHkv2",
   //   "contact": {
   //       "name":"John Doe",
