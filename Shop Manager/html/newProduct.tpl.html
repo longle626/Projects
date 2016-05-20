@@ -8,29 +8,32 @@
 
  		<md-content layout-padding>
 
- 			<form>
+ 			<form name="newProduct">
  					<md-input-container>
  						<label for"title"> Title </label>
- 						<input type="text" id="title" md-autofocus
+ 						<input type="text"  name="title" ng-required="true"id="title" md-autofocus
  						ng-model="product.title">
+ 						<p  class="error"ng-show="newProduct.title.$invalid && newProduct.title.$touched"> Please enter title.</p>
 
  					</md-input-container>
  					<md-input-container>
  						<label for"price"> Price </label>
- 						<input type="text" id="price" ng-model="product.price" >
-
+ 						<input type="text"  name="price"ng-required="true" id="price" ng-model="product.price" >
+ 						<p class="error" ng-show="newProduct.price.$invalid && newProduct.price.$touched"> Please enter price.</p>
  					</md-input-container>
  					<md-input-container>
  						<label for"description"> Description </label>
- 						<input type="text"  ng-model="product.about"id="description" >
+ 						<input type="text" name="description"ng-required="true"  ng-model="product.about" id="description" >
+ 						<p class="error" ng-show="newProduct.description.$invalid && newProduct.description.$touched"> Please enter description. </p>
 
  					</md-input-container>
  					<md-input-container>
- 						<label for"image"> Image Link </label>
- 						<input type="text" ng-model="product.picture"id="imagelink" >
+ 						<label for"image"> Picture Link </label>
+ 						<input type="text" name="picture"ng-required="true" ng-model="product.picture"id="imagelink" >
+ 						<p class="error" ng-show="newProduct.picture.$invalid && newProduct.picture.$touched"> Please put picture link. </p>
 
  					</md-input-container>
- 					<md-button ng-if="!editing"ng-click="saveProduct(product)"class="md-primary button">
+ 					<md-button type="submit" ng-disabled="newProduct.$invalid"class="md-primary button">
  					Post
  					</md-button>
  					

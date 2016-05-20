@@ -8,31 +8,36 @@
 
  		<md-content layout-padding>
 
- 			<form>
+ 			<form name="editProduct">
  					<md-input-container>
  						<label for"title"> Title </label>
- 						<input type="text" id="title" md-autofocus
+ 						<input  ng-required="true" name="title"type="text" id="title" md-autofocus
  						ng-model="product.title">
+ 						<p  class="error"ng-show="editProduct.title.$invalid && editProduct.title.$touched"> Please enter title.</p>
 
  					</md-input-container>
  					<md-input-container>
  						<label for"price"> Price </label>
- 						<input type="text" id="price" ng-model="product.price" >
+ 						<input ng-required="true" name="price"type="text" id="price" ng-model="product.price" >
+ 						<p class="error" ng-show="editProduct.price.$invalid && editProduct.price.$touched"> Please enter price.</p>
 
  					</md-input-container>
  					<md-input-container>
  						<label for"description"> Description </label>
- 						<input type="text"  ng-model="product.about"id="description" >
+ 						<input ng-required="true" name="description"type="text"  ng-model="product.about"id="description" >
+ 						<p class="error" ng-show="editProduct.description.$invalid && editProduct.description.$touched"> Please enter description. </p>
 
  					</md-input-container>
  					<md-input-container>
- 						<label for"image"> Image Link </label>
- 						<input type="text" ng-model="product.picture"id="imagelink" >
+ 						<label for"image"> Picture Link </label>
+ 						<input ng-required="true" name="picture
+ 						"type="text" ng-model="product.picture"id="imagelink" >
+ 						<p class="error" ng-show="editProduct.picture.$invalid && editProduct.picture.$touched"> Please put picture link. </p>
 
  					</md-input-container>
 
  					
- 					<md-button  ng-click="saveEdits()"class="md-primary button">
+ 					<md-button   type="submit" ng-disabled="editProduct.$invalid"ng-click="saveEdits()"class="md-primary button">
  					Save Edit
  					</md-button>
  					<md-button  ng-click="closeSidebar()"class="md-warn button">
