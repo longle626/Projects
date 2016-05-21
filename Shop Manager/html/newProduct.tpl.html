@@ -10,30 +10,30 @@
 
  			<form name="newProduct">
  					<md-input-container>
- 						<label for"title"> Title </label>
+ 						<label > Title </label>
  						<input type="text"  name="title" ng-required="true"id="title" md-autofocus
  						ng-model="product.title">
  						<p  class="error"ng-show="newProduct.title.$invalid && newProduct.title.$touched"> Please enter title.</p>
 
  					</md-input-container>
  					<md-input-container>
- 						<label for"price"> Price </label>
- 						<input type="text"  name="price"ng-required="true" id="price" ng-model="product.price" >
- 						<p class="error" ng-show="newProduct.price.$invalid && newProduct.price.$touched"> Please enter price.</p>
+ 						<label > Price </label>
+ 						<input type="number"  name="price"ng-required="true" id="price" ng-model="product.price"  >
+ 						<p class="error" ng-show="newProduct.price.$invalid && newProduct.price.$touched"> Please enter price in number.</p>
  					</md-input-container>
  					<md-input-container>
- 						<label for"description"> Description </label>
+ 						<label > Description </label>
  						<input type="text" name="description"ng-required="true"  ng-model="product.about" id="description" >
  						<p class="error" ng-show="newProduct.description.$invalid && newProduct.description.$touched"> Please enter description. </p>
 
  					</md-input-container>
  					<md-input-container>
- 						<label for"image"> Picture Link </label>
+ 						<label > Picture Link </label>
  						<input type="text" name="picture"ng-required="true" ng-model="product.picture"id="imagelink" >
  						<p class="error" ng-show="newProduct.picture.$invalid && newProduct.picture.$touched"> Please put picture link. </p>
 
  					</md-input-container>
- 					<md-button type="submit" ng-disabled="newProduct.$invalid"class="md-primary button">
+ 					<md-button ng-disabled="newProduct.$invalid" ng-click="saveProduct(product)"class="md-primary button">
  					Post
  					</md-button>
  					

@@ -10,29 +10,29 @@
 
  			<form name="editProduct">
  					<md-input-container>
- 						<label for"title"> Title </label>
+ 						<label > Title </label>
  						<input  ng-required="true" name="title"type="text" id="title" md-autofocus
  						ng-model="product.title">
  						<p  class="error"ng-show="editProduct.title.$invalid && editProduct.title.$touched"> Please enter title.</p>
 
  					</md-input-container>
  					<md-input-container>
- 						<label for"price"> Price </label>
- 						<input ng-required="true" name="price"type="text" id="price" ng-model="product.price" >
- 						<p class="error" ng-show="editProduct.price.$invalid && editProduct.price.$touched"> Please enter price.</p>
+ 						<label > Price </label>
+ 						<input type="text" ng-pattern="/^[1-9][0-9]{0,2}(?:,?[0-9]{3}){0,3}(?:\.[0-9]{1,2})?$/" ng-required="true" name="price" id="price" ng-model="product.price"  >
+ 						<p class="error" ng-show="editProduct.price.$invalid "> Please enter price in number.</p>
 
  					</md-input-container>
  					<md-input-container>
- 						<label for"description"> Description </label>
+ 						<label > Description </label>
  						<input ng-required="true" name="description"type="text"  ng-model="product.about"id="description" >
- 						<p class="error" ng-show="editProduct.description.$invalid && editProduct.description.$touched"> Please enter description. </p>
+ 						<p class="error" ng-show="editProduct.description.$invalid "> Please enter description. </p>
 
  					</md-input-container>
  					<md-input-container>
- 						<label for"image"> Picture Link </label>
+ 						<label > Picture Link </label>
  						<input ng-required="true" name="picture
  						"type="text" ng-model="product.picture"id="imagelink" >
- 						<p class="error" ng-show="editProduct.picture.$invalid && editProduct.picture.$touched"> Please put picture link. </p>
+ 						<p class="error" ng-show="editProduct.picture.$invalid "> Please put picture link. </p>
 
  					</md-input-container>
 

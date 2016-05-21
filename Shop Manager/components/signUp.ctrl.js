@@ -1,13 +1,11 @@
 (function(){
 	angular.module('shop')
 
-		.controller('editProductCtrl', function($state,$scope,$timeout,$mdSidenav,productsFactory,$mdToast){
+		.controller('signUpCtrl', function($state,$scope,$timeout,$mdSidenav,productsFactory,$mdToast){
 
+	
 			
 
-			$scope.products = productsFactory.ref;
-
-			$scope.product =$scope.products.$getRecord($state.params.id); 
 
 
 			$timeout(function(){
@@ -45,13 +43,13 @@
 				
 			}
 
-			$scope.saveEdits = function(){
-				$scope.products.$save($scope.product).then(function(){
-				$scope.closeSidebar();
-				showToast('Product updated!');
-			})
-			}
+			$scope.submitSignUp = function(){
+			$state.go('home');
+			$scope.closeSidebar();
+			showToast('Sign up completed.');
 
+
+		}
 		});
 
 

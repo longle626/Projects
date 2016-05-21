@@ -1,0 +1,54 @@
+<!-- side nav info start -->
+
+ 	<md-sidenav class = "md-sidenav-left md-whiteframe-z2" md-is-open="sidenavOpen"
+ 	 md-component-id="left">
+ 			<md-toolbar>
+ 					<h1 class ="md-toolbar-tools"> Sign Up </h1>
+ 			</md-toolbar>
+
+ 		<md-content layout-padding>
+
+ 			<form name="signUp">
+ 					<md-input-container>
+ 						<label > First Name </label>
+ 						<input  ng-required="true" name="firstName"type="text"  md-autofocus
+ 						ng-model="user.firstname">
+ 						<p  class="error"ng-show="signUp.firstName.$invalid && signUp.firstName.$touched"> Please enter first name.</p>
+
+ 					</md-input-container>
+ 					<md-input-container>
+ 						<label > Last Name </label>
+ 						<input  ng-required="true" name="lastName"type="text" 
+ 						ng-model="user.lastname">
+ 						<p  class="error"ng-show="signUp.lastName.$invalid && signUp.lastName.$touched"> Please enter last name.</p>
+
+ 					</md-input-container>
+ 					<md-input-container>
+ 						<label > Email </label>
+ 						<input ng-required="true" name="email"type="email"  ng-model="user.email" >
+ 						<p class="error" ng-show="signUp.email.$invalid  && signUp.email.$touched"> Please enter valid email. </p>
+
+ 					</md-input-container>
+ 					<md-input-container>
+ 						<label > Password </label>
+ 						<input ng-minlength="6"ng-required="true" name="password
+ 						"type="password" ng-model="user.password">
+ 						<p class="error"  ng-show="signUp.password.$invalid && signUp.password.$touched "> Password must be at least 6 characters. </p>
+
+ 					</md-input-container>
+
+ 					
+ 					<md-button   type="submit" ng-disabled="signUp.$invalid"ng-click="submitSignUp()"class="md-primary button">
+ 					Sign Up
+ 					</md-button>
+ 					<md-button  ng-click="closeSidebar()"class="md-warn button">
+ 					Cancel 
+ 					</md-button>
+ 					
+ 			</form>
+
+ 		</md-content>
+
+ 	</md-sidenav>
+
+<!-- side nav info end -->

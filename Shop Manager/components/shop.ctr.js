@@ -14,11 +14,6 @@
 
 		// read data from firebase server
 
-		$scope.convert = function(){
-
-			return parseInt($scope.products.price)
-		}
-
 		$scope.products=productsFactory.ref;
 		
 		//filter component 
@@ -69,6 +64,22 @@
 
 		}
 
+		$scope.signUp = function(){
+			$state.go('home.signup', {
+				
+			});
+
+		}
+
+
+
+		$scope.logIn = function(){
+			$state.go('home.login', {
+				
+			});
+
+		}
+
 		// $scope.saveEdit = function(){
 		// 	$scope.editing = false;
 		// 	$scope.product={};
@@ -82,7 +93,7 @@
 				$mdToast.simple()
 					.content(message)
 					.position('top,right')
-					.hideDelay(3000)
+					.hideDelay(2000)
 				);
 
 		}

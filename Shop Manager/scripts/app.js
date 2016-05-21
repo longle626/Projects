@@ -24,6 +24,16 @@ angular.module('shop',["ngMaterial","ui.router","firebase"])
 				params: {
 					product:null
 				}
+			})
+			.state ('home.signup', {
+				url: '/signUp',
+				templateUrl:'html/signUp.tpl.html',
+				controller:'signUpCtrl'
+			})
+			.state ('home.login', {
+				url: '/login',
+				templateUrl:'html/login.tpl.html',
+				controller:'loginCtrl'
 			});
 			
 

@@ -1,9 +1,9 @@
 		<!-- toolbar info start  -->
- <md-toolbar>
-  	<div class="md-toolbar-tools" layout="row" layout-align="center center ">
-  			<p class="brand"> <strong> Shop Manager </strong></p>
+ <md-toolbar >
+  	<div class="md-toolbar-tools" layout="row" >
+  			<p  flex="25"class="brand">  Shop Manager</p>
 
-  			<div  >
+  			<div  flex="45">
   			<md-button  ng-click="openSidebar()">
   			<md-icon class="mdi mdi-plus-circle" >  	</md-icon>
   			Post Product 
@@ -13,6 +13,18 @@
   			<md-button   ng-click="filter()" >
   			<md-icon class="mdi mdi-magnify" >  </md-icon>
   			{{filterMessage}}
+  			</md-button>
+
+  			</div  >
+
+  			<div flex="30" class="rightNav">
+  			<md-button  ng-click="signUp()">
+  			<md-icon class=" mdi mdi-account-plus" ></md-icon>
+  			Sign Up
+  			</md-button>
+  			<md-button  ng-click="logIn()">
+  			<md-icon class=" mdi mdi-login" ></md-icon>
+  			Log In
   			</md-button>
 
   			</div>

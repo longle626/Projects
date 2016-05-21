@@ -1,0 +1,41 @@
+<!-- side nav info start -->
+
+ 	<md-sidenav class = "md-sidenav-left md-whiteframe-z2" md-is-open="sidenavOpen"
+ 	 md-component-id="left">
+ 			<md-toolbar>
+ 					<h1 class ="md-toolbar-tools"> Log In </h1>
+ 			</md-toolbar>
+
+ 		<md-content layout-padding>
+
+ 			<form name="LogIn">
+ 					
+ 					<md-input-container>
+ 						<label > Email </label>
+ 						<input md-autofocus ng-required="true" name="email"type="email"  ng-model="user.email" >
+ 						<p class="error" ng-show="LogIn.email.$invalid  && LogIn.email.$touched"> Please enter valid email. </p>
+
+ 					</md-input-container>
+ 					<md-input-container>
+ 						<label > Password </label>
+ 						<input ng-minlength="6"ng-required="true" name="password
+ 						"type="password" ng-model="user.password">
+ 						<p class="error"  ng-show="LogIn.password.$invalid && LogIn.password.$touched "> Password must be at least 6 characters. </p>
+
+ 					</md-input-container>
+
+ 					
+ 					<md-button    ng-disabled="LogIn.$invalid"ng-click="logIn()"class="md-primary button">
+ 					Log In
+ 					</md-button>
+ 					<md-button  ng-click="closeSidebar()"class="md-warn button">
+ 					Cancel 
+ 					</md-button>
+ 					
+ 			</form>
+
+ 		</md-content>
+
+ 	</md-sidenav>
+
+<!-- side nav info end -->
